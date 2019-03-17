@@ -1,12 +1,19 @@
+.mx-100 {
+  margin: 100px 0;
+}
+
+.px-100 {
+  padding: 100px 0;
+}
+
 .n-header-title {
+  @extend .text-center;
+  @extend .text-uppercase;
   font-size: $font-size-21px;
   letter-spacing: 0.2em;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
 
   a {
-    position: relative;
+    @extend .position-relative;
 
     &::after {
       content: "";
