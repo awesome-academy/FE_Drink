@@ -4,7 +4,7 @@ block title
   | Trang Chủ
 
 block content
-  section.home-intro
+  section.home-intro.px-100
     .container
       +n-header-title("Giới thiệu")
 
@@ -49,8 +49,51 @@ block content
       +n-header-title("Sản phẩm mới")
       .products
         .row
-          .col-md-3
-            .products-item
-              a(href="#").products-item__img
-                img(src="https://via.placeholder.com/260")
-
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/1.jpg").products-item--sale
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/2.jpg").products-item--new
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/3.jpg").products-item--hot
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/4.jpg")
+  section.home-wine-1987.mx-100.overflow-hidden
+    .row.no-gutters
+      - for (var item = 1; item <= 8; item++)
+        .col-sm-12.col-md-3
+          +home-wine-1987(item)
+  section
+    .container
+      +n-header-title("Sản phẩm bán chạy")
+      .products
+        .row
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/7.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/8.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/9.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/10.jpg")
+  section.mx-100
+    .container
+      .row
+        .col-md-8
+          +n-header-title("Tin tức & blog")
+          .row
+            .col-md-6
+              +card-wine("../assets/images/blog/blog_1.jpg")
+            .col-md-6
+              +card-wine("../assets/images/blog/blog_2.jpg")
+        .col-md-4
+          +n-header-title("Khách hàng")
+          .customers
+            img.customers__quote(src="../assets/images/common/quote.png")
+            p.customers__comment
+              | Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long ...
+            a.btn-readmore(href="#") Read more
+            .customers__info
+              a.customers__avatar(href="#")
+                img(src="../assets/images/common/customer.png")
+              p.customers__name Giang LT
+              p.customers__job Graphic design
